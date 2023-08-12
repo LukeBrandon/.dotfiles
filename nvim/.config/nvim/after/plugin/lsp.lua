@@ -8,6 +8,8 @@ lsp.ensure_installed ({
 	'eslint',
 })
 
+lsp.skip_server_setup({'rust_analyzer'})
+
 -- Navigating code complete popups
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -46,3 +48,14 @@ end)
 
 
 lsp.setup()
+
+local rust_tools = require("rust-tools")
+rust_tools.setup({
+    server = {
+        on_attach = function(_, bufnr)
+            local opts = {ubffer = bufnr}
+            vim.keymap.set('n', '<C-space>', rust_tools.hover_actions.hover_actions(), opts)
+            vim.keymap.set('n', '<leader>a', rust_tools.code_action.code_action(), opts)
+        end
+    }
+})

@@ -57,6 +57,11 @@ return require('packer').startup(function(use)
 		  {'williamboman/mason.nvim'},           -- Optional
 		  {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
+          {'simrat39/rust-tools.nvim'}, -- Rust
+          -- Debugging
+          { 'nvim-lua/plenary.nvim'}, -- Rust
+          { 'mfussenegger/nvim-dap'}, -- Rust
+
 		  -- Autocompletion
 		  {'hrsh7th/nvim-cmp'},     -- Required
 		  {'hrsh7th/cmp-nvim-lsp'}, -- Required
