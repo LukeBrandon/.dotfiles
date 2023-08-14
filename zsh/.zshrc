@@ -2,10 +2,11 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export ZSH="$HOME/.oh-my-zsh"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export 
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -78,9 +79,15 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+tmux source-file ~/.config/tmux/tmux.conf
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# ---------------------------------------------------------------------------------
+# Path Configuration --------------------------------------------------------------
+# ---------------------------------------------------------------------------------
+mkdir -p "$HOME/.local/bin"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin/:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
