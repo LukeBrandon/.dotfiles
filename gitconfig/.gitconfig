@@ -1,0 +1,22 @@
+[user]
+	email = lukebrandon68@gmail.com
+	name = Luke Brandon
+	signingkey = ~/.ssh/id_rsa.pub
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[core]
+	editor = nvim
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = cache
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[commit]
+	gpgsign = true
+[gpg]
+    format = ssh
+
